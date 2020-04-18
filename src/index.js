@@ -3,10 +3,11 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import Redux101 from "./playground/redux-101";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Redux101 />
   </React.StrictMode>,
   document.getElementById("root")
 );
