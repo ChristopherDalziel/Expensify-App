@@ -1,11 +1,21 @@
 import React from "react";
 
-function App() {
+import { BrowserRouter, Route } from "react-router-dom";
+
+import ExpenseDashboardPage from "./components/ExpenseDashboardPage";
+
+// const routes = (
+//   <BrowserRouter>
+//     <Route exact path="/" component={ExpenseDashboardPage} />{" "}
+//   </BrowserRouter>
+// );
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>expensify app</h1>
-    </div>
+    <BrowserRouter>
+      <Route exact path="/" component={ExpenseDashboardPage} />{" "}
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
