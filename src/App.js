@@ -8,9 +8,12 @@ import EditExpensePage from "./components/pages/EditExpensePage";
 import HelpPage from "./components/pages/HelpPage";
 import NotFoundPage from "./components/pages/NotFoundPage";
 
+import Header from "./components/Header";
+
 const App = () => {
   return (
     <BrowserRouter>
+      <Header />
       <Switch>
         <Route exact path="/" component={ExpenseDashboardPage} />
         <Route path="/create" component={AddExpensePage} />
