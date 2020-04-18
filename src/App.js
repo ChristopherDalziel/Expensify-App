@@ -8,12 +8,6 @@ import EditExpensePage from "./components/EditExpensePage";
 import HelpPage from "./components/HelpPage";
 import NotFoundPage from "./components/NotFoundPage";
 
-// const routes = (
-//   <BrowserRouter>
-//     <Route exact path="/" component={ExpenseDashboardPage} />{" "}
-//   </BrowserRouter>
-// );
-
 const App = () => {
   return (
     <BrowserRouter>
@@ -23,7 +17,7 @@ const App = () => {
         <Route path="/edit" component={EditExpensePage} />
         <Route path="/help" component={HelpPage} />
 
-        <Route path="" component={NotFoundPage} />
+        <Route component={NotFoundPage} />
       </Switch>
     </BrowserRouter>
   );
