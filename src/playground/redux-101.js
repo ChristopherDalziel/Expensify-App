@@ -45,7 +45,7 @@ const store = createStore((state = { count: 0 }, action) => {
 });
 
 const unsubscribe = store.subscribe(() => {
-  console.log(store.getState());
+  // console.log(store.getState());
 });
 
 store.dispatch({
