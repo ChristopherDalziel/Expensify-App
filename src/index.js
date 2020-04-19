@@ -3,11 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+
+// Playground Imports
 import Redux101 from "./playground/redux-101";
+import Destructuring from "./playground/Destructuring-ES6";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Redux101 />
+    <Destructuring />
   </React.StrictMode>,
   document.getElementById("root")
 );
