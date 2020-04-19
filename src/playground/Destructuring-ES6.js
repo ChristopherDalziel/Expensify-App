@@ -34,4 +34,17 @@ if (city && temp) {
   console.log(`It's ${temp} in ${city}`);
 }
 
+const book = {
+  title: "Harry Potter",
+  author: "Jk Rowling",
+  publisher: {
+    name: "Bloomsberry",
+  },
+};
+
+// Change the variable name and setting a default if there is no name
+const { name: publisherName = "Self-published" } = book.publisher;
+
+console.log(publisherName);
+
 export default Destructuring;
