@@ -16,14 +16,25 @@ const Redux101 = () => {
 const store = createStore((state = { count: 0 }, action) => {
   switch (action.type) {
     case "INCREMENT":
+      // incrementBy allows us to dynamically pass information when/if the action is called.
+      // If incrementBy is not a number, we default the value to 1
+      const incrementBy =
+        typeof action.incrementBy === "number" ? action.incrementBy : 1;
       return {
-        count: state.count + 1,
+        count: state.count + incrementBy,
       };
     case "DECREMENT":
+      const decrementBy =
+        // If decrementBy is not a number, we default the value to 1
+        typeof action.decrementBy === "number" ? action.decrementBy : 1;
       return {
-        count: state.count - 1,
+        count: state.count - decrementBy,
       };
-
+    // Allows us the set our own count
+    case "SET":
+      return {
+        count: action.count,
+      };
     case "RESET":
       return {
         count: 0,
@@ -33,32 +44,34 @@ const store = createStore((state = { count: 0 }, action) => {
   }
 });
 
-console.log(store.getState());
+const unsubscribe = store.subscribe(() => {
+  console.log(store.getState());
+});
 
 store.dispatch({
   type: "INCREMENT",
+  incrementBy: 10,
 });
 
-console.log(store.getState());
+// When you usub from the subscribe we stop following any new dispatches.
+// unsubscribe();
+
+store.dispatch({
+  type: "RESET",
+});
+
+store.dispatch({
+  type: "DECREMENT",
+  decrementBy: 10,
+});
 
 store.dispatch({
   type: "DECREMENT",
 });
 
 store.dispatch({
-  type: "INCREMENT",
+  type: "SET",
+  count: 101,
 });
-
-store.dispatch({
-  type: "INCREMENT",
-});
-
-console.log(store.getState());
-
-store.dispatch({
-  type: "RESET",
-});
-
-console.log(store.getState());
 
 export default Redux101;
