@@ -53,6 +53,7 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
       return [...state, action.expense];
     case "REMOVE_EXPENSE":
       return state.filter(({ id }) => {
+        // If the ID is not equal to the action.id, if they're not equal it will be true and they will be kept, if not they will return false and be filtered out.
         return id !== action.id;
       });
     default:
