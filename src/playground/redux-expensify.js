@@ -11,6 +11,13 @@ const ReduxExpensifyTest = () => {
 
 // All of the actions we need our reducers to handle
 // ADD_EXPENSE
+const addExpense = () => {
+  type: "ADD_EXPENSE", 
+  expense: {
+    
+  }
+}
+
 // REMOVE_EXPENSE
 // EDIT_EXPENSE
 // SET_TEXT_FILTER
