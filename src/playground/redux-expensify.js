@@ -1,5 +1,6 @@
 import React from "react";
 import { createStore, combineReducers } from "redux";
+import uuid from "uuid/v4";
 
 const ReduxExpensifyTest = () => {
   return (
@@ -11,12 +12,27 @@ const ReduxExpensifyTest = () => {
 
 // All of the actions we need our reducers to handle
 // ADD_EXPENSE
-const addExpense = () => {
-  type: "ADD_EXPENSE", 
+// The values other than id are going to come from the user and for that reason need to be passed in
+const addExpense = ({
+  description = "",
+  note = "",
+  amount = 0,
+  createdAt = 0,
+} = {}) => ({
+  type: "ADD_EXPENSE",
   expense: {
-    
-  }
-}
+    id: uuid(),
+    description,
+    note,
+    amount,
+    createdAt,
+  },
+});
+
+const removeExpense = ({ id } = {}) => ({
+  type: "REMOVE_EXPENSE",
+  id,
+});
 
 // REMOVE_EXPENSE
 // EDIT_EXPENSE
@@ -32,6 +48,13 @@ const expensesReducerDefaultState = [];
 
 const expensesReducer = (state = expensesReducerDefaultState, action) => {
   switch (action.type) {
+    case "ADD_EXPENSE":
+      // state.concat(action.expense); > the return line is essentially saying this but using the ES6 spread operator.
+      return [...state, action.expense];
+    case "REMOVE_EXPENSE":
+      return state.filter(({ id }) => {
+        return id !== action.id;
+      });
     default:
       return state;
   }
@@ -59,7 +82,18 @@ const store = createStore(
   combineReducers({ expenses: expensesReducer, filters: filterReducer })
 );
 
-console.log(store.getState());
+store.subscribe(() => {
+  console.log(store.getState());
+});
+
+const expenseOne = store.dispatch(
+  addExpense({ description: "rent", amount: 100 })
+);
+const expenseTwo = store.dispatch(
+  addExpense({ description: "coffee", amount: 300 })
+);
+
+store.dispatch(removeExpense({ id: expenseOne.expense.id }));
 
 const demoState = {
   expenses: [
