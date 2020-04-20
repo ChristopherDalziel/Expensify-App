@@ -20,7 +20,12 @@ const demoState = {
     },
   ],
 
-  filter: {},
+  filter: {
+    text: "rent",
+    sortBy: "amount", //date or amount
+    startDate: undefined,
+    endDate: undefined,
+  },
 };
 
 export default ReduxExpensifyTest;
