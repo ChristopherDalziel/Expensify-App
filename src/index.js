@@ -10,7 +10,7 @@ import Destructuring from "./playground/Destructuring-ES6";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Destructuring />
+    <Redux101 />
   </React.StrictMode>,
   document.getElementById("root")
 );
