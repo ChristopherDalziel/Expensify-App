@@ -45,8 +45,11 @@ const resetCount = () => {
   };
 };
 
-// Setting the store/state to our default state
-const store = createStore((state = { count: 0 }, action) => {
+// Setting the store/state to our default state - this is called a reducer.
+// A reducer is a function that determines changes to the applications state, it uses an action to determine the change.
+// 1. Reducers are pure functions (Output is defined by the input, it doesn't change or add anything outside of it's scope. )
+// 2. Never change state or actions - we don't want to directly change these things, instead we should be reading off them and returning an object that represents the new state.
+const countReducer = (state = { count: 0 }, action) => {
   switch (action.type) {
     case "INCREMENT":
       return {
@@ -68,10 +71,13 @@ const store = createStore((state = { count: 0 }, action) => {
     default:
       return state;
   }
-});
+};
+
+// Creation of the store - assigning the countReducer
+const store = createStore(countReducer);
 
 const unsubscribe = store.subscribe(() => {
-  console.log(store.getState());
+  // console.log(store.getState());
 });
 
 store.dispatch(incrementCount({ incrementBy: 5 }));
