@@ -7,10 +7,11 @@ import * as serviceWorker from "./serviceWorker";
 // Playground Imports
 import Redux101 from "./playground/redux-101";
 import Destructuring from "./playground/Destructuring-ES6";
+import ReduxExpensifyTest from "./playground/redux-expensify";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Redux101 />
+    <ReduxExpensifyTest />
   </React.StrictMode>,
   document.getElementById("root")
 );
