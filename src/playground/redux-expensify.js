@@ -96,6 +96,8 @@ const expenseTwo = store.dispatch(
 
 store.dispatch(removeExpense({ id: expenseOne.expense.id }));
 
+store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }));
+
 const demoState = {
   expenses: [
     {
@@ -114,5 +116,14 @@ const demoState = {
     endDate: undefined,
   },
 };
+
+const user = {
+  name: "chris",
+  age: 12,
+};
+
+// While using the spread operator, you're able to update properties that are attached to the spread object, or add new ones as shown below.
+// The new or updated properties must be added AFTER the spread object
+console.log({ ...user, age: 25, location: "melbourne" }); // returns name: 'chris', age: 25, location: "melbourne"
 
 export default ReduxExpensifyTest;
