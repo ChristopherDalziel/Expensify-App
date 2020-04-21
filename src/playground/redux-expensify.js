@@ -11,6 +11,7 @@ const ReduxExpensifyTest = () => {
 };
 
 // All of the actions we need our reducers to handle
+
 // ADD_EXPENSE
 // The values other than id are going to come from the user and for that reason need to be passed in
 const addExpense = ({
@@ -29,13 +30,19 @@ const addExpense = ({
   },
 });
 
+// REMOVE_EXPENSE
 const removeExpense = ({ id } = {}) => ({
   type: "REMOVE_EXPENSE",
   id,
 });
 
-// REMOVE_EXPENSE
 // EDIT_EXPENSE
+const editExpense = (id, updates) => ({
+  type: "EDIT_EXPENSE",
+  id,
+  updates,
+});
+
 // SET_TEXT_FILTER
 // SORT_BY_DATE
 // SORT_BY_AMOUNT
@@ -55,6 +62,20 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
       return state.filter(({ id }) => {
         // If the ID is not equal to the action.id, if they're not equal it will be true and they will be kept, if not they will return false and be filtered out.
         return id !== action.id;
+      });
+    case "EDIT_EXPENSE":
+      return state.map((expense) => {
+        if (expense.id === action.id) {
+          // If there is a match we want to return a brand new object
+          return {
+            // Grabbing all it's existing properties
+            ...expense,
+            // Overwrite everything that was passed down and thats going to be the new properties
+            ...action.updates,
+          };
+        } else {
+          return expense;
+        }
       });
     default:
       return state;
