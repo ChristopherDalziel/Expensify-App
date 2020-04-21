@@ -61,7 +61,16 @@ const sortByAmount = () => ({
 });
 
 // SET_START_DATE
+const setStartDate = (startDate) => ({
+  type: "SET_START_DATE",
+  startDate,
+});
+
 // SET_END_DATE
+const setEndDate = (endDate) => ({
+  type: "SET_END_DATE",
+  endDate,
+});
 
 // Expenses Reducer:
 
@@ -122,6 +131,16 @@ const filterReducer = (state = filterReducerDefaultState, action) => {
         ...state,
         sortBy: "amount",
       };
+    case "SET_START_DATE":
+      return {
+        ...state,
+        startDate: action.startDate,
+      };
+    case "SET_END_DATE":
+      return {
+        ...state,
+        endDate: action.endDate,
+      };
     default:
       return state;
   }
@@ -144,12 +163,15 @@ const expenseTwo = store.dispatch(
   addExpense({ description: "coffee", amount: 300 })
 );
 
-store.dispatch(removeExpense({ id: expenseOne.expense.id }));
-store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }));
+// store.dispatch(removeExpense({ id: expenseOne.expense.id }));
+// store.dispatch(editExpense(expenseTwo.expense.id, { amount: 500 }));
 
-store.dispatch(setTextFilter("rent"));
-store.dispatch(sortByDate());
-store.dispatch(sortByAmount());
+// store.dispatch(setTextFilter("rent"));
+// store.dispatch(sortByDate());
+// store.dispatch(sortByAmount());
+store.dispatch(setStartDate(125));
+store.dispatch(setStartDate());
+store.dispatch(setEndDate(1250));
 
 const demoState = {
   expenses: [
@@ -177,6 +199,6 @@ const user = {
 
 // While using the spread operator, you're able to update properties that are attached to the spread object, or add new ones as shown below.
 // The new or updated properties must be added AFTER the spread object
-console.log({ ...user, age: 25, location: "melbourne" }); // returns name: 'chris', age: 25, location: "melbourne"
+// console.log({ ...user, age: 25, location: "melbourne" }); // returns name: 'chris', age: 25, location: "melbourne"
 
 export default ReduxExpensifyTest;
