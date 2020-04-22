@@ -11,7 +11,7 @@ import ReduxExpensifyTest from "./playground/redux-expensify";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ReduxExpensifyTest />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
