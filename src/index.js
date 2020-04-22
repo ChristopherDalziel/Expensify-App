@@ -11,10 +11,25 @@ import * as serviceWorker from "./serviceWorker";
 
 // Store
 import configureStore from "./store/configureStore";
-
+// Actions
+import { addExpense } from "./actions/expenses";
+import { setTextFilter } from "./actions/filters";
+// Selector
+import getVisibleExpenses from "./selectors/expenses";
+// Store config
 const store = configureStore();
+// Dispatch
+store.dispatch(addExpense({ description: "Water bill" }));
+store.dispatch(addExpense({ description: "Gas bill" }));
+store.dispatch(setTextFilter("Water"));
+// Set state
+const state = store.getState();
+// Display visible expenses
+const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+// To console
+console.log(visibleExpenses);
 
-console.log(store.getState());
+// console.log(store.getState());
 
 ReactDOM.render(
   <React.StrictMode>
