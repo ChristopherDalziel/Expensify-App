@@ -5,9 +5,16 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
 // Playground Imports
-import Redux101 from "./playground/redux-101";
-import Destructuring from "./playground/Destructuring-ES6";
-import ReduxExpensifyTest from "./playground/redux-expensify";
+// import Redux101 from "../playground/redux-101";
+// import Destructuring from "../playground/Destructuring-ES6";
+// import ReduxExpensifyTest from "../playground/redux-expensify";
+
+// Store
+import configureStore from "./store/configureStore";
+
+const store = configureStore();
+
+console.log(store.getState());
 
 ReactDOM.render(
   <React.StrictMode>
