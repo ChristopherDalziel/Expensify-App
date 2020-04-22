@@ -8,6 +8,7 @@ import * as serviceWorker from "./serviceWorker";
 // import Redux101 from "../playground/redux-101";
 // import Destructuring from "../playground/Destructuring-ES6";
 // import ReduxExpensifyTest from "../playground/redux-expensify";
+import HOC from "./playground/hoc";
 
 // Store
 import configureStore from "./store/configureStore";
@@ -33,7 +34,7 @@ console.log(visibleExpenses);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <HOC />
   </React.StrictMode>,
   document.getElementById("root")
 );
