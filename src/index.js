@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import AppRouter from "./routers/AppRouter";
 import * as serviceWorker from "./serviceWorker";
+import { Provider } from "react-redux";
 
 // Playground Imports
 // import Redux101 from "../playground/redux-101";
@@ -33,13 +34,14 @@ console.log(visibleExpenses);
 
 // console.log(store.getState());
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-    {/* <AuthInfo isAuthenticated={true} info="This is the info" /> */}
-  </React.StrictMode>,
-  document.getElementById("root")
+// Setting up our Redux provider, the prop is attaching it to the store.
+const jsx = (
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>
 );
+
+ReactDOM.render(jsx, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
