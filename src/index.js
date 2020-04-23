@@ -8,8 +8,8 @@ import * as serviceWorker from "./serviceWorker";
 // import Redux101 from "../playground/redux-101";
 // import Destructuring from "../playground/Destructuring-ES6";
 // import ReduxExpensifyTest from "../playground/redux-expensify";
-import { AdminInfo } from "./playground/hoc";
-import { AuthInfo } from "./playground/hoc";
+// import { AdminInfo } from "../playground/hoc";
+// import { AuthInfo } from "../playground/hoc";
 
 // Store
 import configureStore from "./store/configureStore";
@@ -35,7 +35,8 @@ console.log(visibleExpenses);
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthInfo isAuthenticated={true} info="This is the info" />
+    <App />
+    {/* <AuthInfo isAuthenticated={true} info="This is the info" /> */}
   </React.StrictMode>,
   document.getElementById("root")
 );
