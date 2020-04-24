@@ -1,4 +1,5 @@
 import React from "react";
+import { removeExpense } from "../actions/expenses";
 
 const ExpenseListItem = ({ description, amount, createdAt }) => (
   <div>
@@ -6,6 +7,7 @@ const ExpenseListItem = ({ description, amount, createdAt }) => (
     <p>
       {amount} - {createdAt}
     </p>
+    <button>Remove</button>
   </div>
 );
 
