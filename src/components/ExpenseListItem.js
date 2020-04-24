@@ -9,7 +9,7 @@ const ExpenseListItem = ({ dispatch, description, amount, createdAt, id }) => (
       {amount} - {createdAt}
     </p>
     <button
-      onClick={(e) => {
+      onClick={() => {
         dispatch(removeExpense({ id }));
       }}
     >
@@ -17,11 +17,5 @@ const ExpenseListItem = ({ dispatch, description, amount, createdAt, id }) => (
     </button>
   </div>
 );
-
-const mapStateToProps = (state) => {
-  return {
-    expenses: state.expenses,
-  };
-};
 
 export default connect()(ExpenseListItem);
