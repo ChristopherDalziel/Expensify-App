@@ -11,7 +11,6 @@ const ExpenseListFilters = (props) => (
       onChange={(e) => {
         // Attaching our input to our action, dispatch will change the value in our store.
         props.dispatch(setTextFilter(e.target.value));
-        console.log(e.target.value);
       }}
     ></input>
   </div>
