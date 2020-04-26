@@ -7,17 +7,22 @@ import "react-dates/initialize";
 // const date = new Date();
 const now = moment();
 
-console.log(now.format("MMM Do YYYY"));
+// console.log(now.format("MMM Do YYYY"));
 
 export default class ExpenseForm extends React.Component {
-  state = {
-    description: "",
-    note: "",
-    amount: "",
-    createdAt: moment(),
-    calenderFocused: false,
-    error: "",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      description: props.expense ? props.expense.description : "",
+      note: props.expense ? props.expense.note : "",
+      // On the amount state, if we're passing it back from an expense we need to convert it back from a number to a string
+      amount: props.expense ? (props.expense.amount / 100).toString() : "",
+      // The createdAt state needs to take in the timestamp of the expense not the current time.
+      createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+      calenderFocused: false,
+      error: "",
+    };
+  }
 
   onDescriptionChange = (e) => {
     const description = e.target.value;
