@@ -64,7 +64,14 @@ export default class ExpenseForm extends React.Component {
       }));
     } else {
       this.setState(() => ({ error: "" }));
-      console.log("Submitted");
+      this.props.onSubmit({
+        description: this.state.description,
+        // We need to convert amount into the correct type, by converting it from a string. Float keeps the decmimal places, and setting the 10 afterwards ensures we're in base 10. Since we're working in cents we need to multiply by 100.
+        amount: parseFloat(this.state.amount, 10) * 100,
+        // Value of is a moment function and allows us to format the time/date correctly
+        createdAt: this.state.createdAt.valueOf(),
+        note: this.state.note,
+      });
     }
   };
 
