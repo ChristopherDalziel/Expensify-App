@@ -3,6 +3,7 @@ import moment from "moment";
 const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
   return expenses
     .filter((expense) => {
+      // We are now using moment dates here to align with the component that is using date picker rather than manually inputted dates
       const createdAtMoment = moment(expense.createdAt);
       const startDateMatch = startDate
         ? startDate.isSameOrBefore(createdAtMoment, "day")
