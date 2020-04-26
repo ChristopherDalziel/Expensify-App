@@ -35,7 +35,7 @@ export default class ExpenseForm extends React.Component {
   onAmountChange = (e) => {
     const amount = e.target.value;
     // Regular expressions, setting restrictions on what we will allow to be set in our state (Checkout regex101.com)
-    if (amount.match(/^\d*(\.\d{0,2})?$/)) {
+    if (amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
       this.setState(() => {
         return { amount };
       });
