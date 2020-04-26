@@ -35,7 +35,8 @@ export default class ExpenseForm extends React.Component {
   onAmountChange = (e) => {
     const amount = e.target.value;
     // Regular expressions, setting restrictions on what we will allow to be set in our state (Checkout regex101.com)
-    if (amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
+    // If there is no amount or if the amount matches set a new state (This allows the user to remove their input, without this you cannot.)
+    if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
       this.setState(() => {
         return { amount };
       });
@@ -43,7 +44,10 @@ export default class ExpenseForm extends React.Component {
   };
 
   onDateChange = (createdAt) => {
-    this.setState(() => ({ createdAt }));
+    // If a there is a createdAt value, use this.setState, if there is not.. do nothing. This prevents the user from removing the date entirely.
+    if (createdAt) {
+      this.setState(() => ({ createdAt }));
+    }
   };
 
   onFocusChange = ({ focused }) => {
