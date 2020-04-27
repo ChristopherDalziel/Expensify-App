@@ -1,6 +1,6 @@
 import React from "react";
 import { createStore, combineReducers } from "redux";
-import uuid from "uuid/v4";
+import { v4 as uuidv4 } from "uuid";
 
 const ReduxExpensifyTest = () => {
   return (
@@ -22,7 +22,7 @@ const addExpense = ({
 } = {}) => ({
   type: "ADD_EXPENSE",
   expense: {
-    id: uuid(),
+    id: uuidv4(),
     description,
     note,
     amount,
