@@ -16,7 +16,7 @@ import { Provider } from "react-redux";
 import configureStore from "./store/configureStore";
 // Actions
 import { addExpense } from "./actions/expenses";
-import { setTextFilter } from "./actions/filters";
+// import { setTextFilter } from "./actions/filters";
 // Selector
 import getVisibleExpenses from "./selectors/expenses";
 // Store config

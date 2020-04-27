@@ -5,7 +5,7 @@ import "react-dates/lib/css/_datepicker.css";
 import "react-dates/initialize";
 
 // const date = new Date();
-const now = moment();
+// const now = moment();
 
 // console.log(now.format("MMM Do YYYY"));
 
