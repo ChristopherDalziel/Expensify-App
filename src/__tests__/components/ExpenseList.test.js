@@ -10,4 +10,7 @@ test("Should render expense list with expenses", () => {
   expect(toJSON(wrapper)).toMatchSnapshot();
 });
 
-test("Should render expense list without expenses", () => {});
+test("Should render expense list with empty message", () => {
+  const wrapper = shallow(<ExpenseList expenses={[]} />);
+  expect(toJSON(wrapper)).toMatchSnapshot();
+});
