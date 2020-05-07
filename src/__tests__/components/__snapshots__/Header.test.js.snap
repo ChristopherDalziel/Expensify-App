@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render header correctly 1`] = `
+<div>
+  <h1>
+    Expensify
+  </h1>
+  <ForwardRef
+    activeClassName="isActive"
+    exact={true}
+    to="/"
+  >
+    Dashboard
+  </ForwardRef>
+  <ForwardRef
+    activeClassName="isActive"
+    to="/create"
+  >
+    Create
+  </ForwardRef>
+</div>
+`;
