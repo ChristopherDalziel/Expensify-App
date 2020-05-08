@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import "react-dates/lib/css/_datepicker.css";
+import "react-dates/initialize";
 import AppRouter from "./routers/AppRouter";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
