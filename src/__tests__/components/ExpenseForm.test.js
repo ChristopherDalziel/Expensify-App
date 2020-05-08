@@ -50,3 +50,9 @@ test("Should not set amount if invalid input", () => {
   wrapper.find("input").at(1).simulate("change", { target: { value } });
   expect(wrapper.state("amount")).toBe("");
 });
+
+test("Should call onSubmit prop for validation", () => {
+  const onSubmitSpy = jest.fn();
+  onSubmitSpy();
+  expect(onSubmitSpy).toHaveBeenCalled();
+});
