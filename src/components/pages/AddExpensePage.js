@@ -6,7 +6,7 @@ import { addExpense } from "../../actions/expenses";
 export class AddExpensePage extends React.Component {
   onSubmit = (expense) => {
     // The addExpense function we set up earlier takes an object with all of the values that the expense prop we're passing up is holding.
-    this.props.onSubmit(expense);
+    this.props.addExpense(expense);
     this.props.history.push("/");
   };
   render() {
@@ -21,7 +21,7 @@ export class AddExpensePage extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSubmit: (expense) => dispatch(addExpense(expense)),
+    addExpense: (expense) => dispatch(addExpense(expense)),
   };
 };
 
