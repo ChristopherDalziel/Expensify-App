@@ -3,18 +3,14 @@ import { Link } from "react-router-dom";
 
 const ExpenseListItem = ({ description, amount, createdAt, id }) => (
   <div>
-    {description ? (
-      <>
-        <Link to={`/edit/${id}`}>
-          <h3>{description}</h3>
-        </Link>
-        <p>
-          {amount} - {createdAt}
-        </p>
-      </>
-    ) : (
-      ""
-    )}
+    <>
+      <Link to={`/edit/${id}`}>
+        <h3>{description}</h3>
+      </Link>
+      <p>
+        {amount} - {createdAt}
+      </p>
+    </>
   </div>
 );
 
