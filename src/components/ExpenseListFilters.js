@@ -24,7 +24,6 @@ export class ExpenseListFilters extends React.Component {
   };
 
   onTextChange = (e) => {
-    // Attaching our input to our action, dispatch will change the value in our store.
     this.props.setTextFilter(e.target.value);
   };
 
