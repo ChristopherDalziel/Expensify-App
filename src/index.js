@@ -14,6 +14,7 @@ import "./firebase/firebase";
 // import ReduxExpensifyTest from "../playground/redux-expensify";
 // import { AdminInfo } from "../playground/hoc";
 // import { AuthInfo } from "../playground/hoc";
+// import PromisesComponent from "./playground/promises";
 
 // Store
 import configureStore from "./store/configureStore";
