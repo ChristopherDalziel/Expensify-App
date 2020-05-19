@@ -1,3 +1,5 @@
+Creating an expense application as apart of a Udemy tutorial by Andrew Mead.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
