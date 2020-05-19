@@ -6,6 +6,7 @@ import "react-dates/initialize";
 import AppRouter from "./routers/AppRouter";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
+import "./firebase/firebase";
 
 // Playground Imports
 // import Redux101 from "../playground/redux-101";
