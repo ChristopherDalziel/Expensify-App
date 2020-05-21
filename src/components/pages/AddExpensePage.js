@@ -1,12 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import ExpenseForm from "../ExpenseForm";
-import { addExpense } from "../../actions/expenses";
+import { startAddExpense } from "../../actions/expenses";
 
 export class AddExpensePage extends React.Component {
   onSubmit = (expense) => {
     // The addExpense function we set up earlier takes an object with all of the values that the expense prop we're passing up is holding.
-    this.props.addExpense(expense);
+    this.props.startAddExpense(expense);
     this.props.history.push("/");
   };
   render() {
@@ -21,7 +21,7 @@ export class AddExpensePage extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addExpense: (expense) => dispatch(addExpense(expense)),
+    startAddExpense: (expense) => dispatch(startAddExpense(expense)),
   };
 };
 
