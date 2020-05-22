@@ -2,6 +2,7 @@ import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import {
   startAddExpense,
+  addExpense,
   removeExpense,
   editExpense,
 } from "../../actions/expenses";
@@ -31,10 +32,10 @@ test("Should set up edit expense action object", () => {
 });
 
 test("Should set up add expense action object with provided values", () => {
-  const action = startAddExpense(expenses[2]);
+  const action = addExpense(expenses[0]);
   expect(action).toEqual({
     type: "ADD_EXPENSE",
-    expense: expenses[2],
+    expense: expenses[0],
   });
 });
 
