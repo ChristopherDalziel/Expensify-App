@@ -7,6 +7,7 @@ import {
   editExpense,
 } from "../../actions/expenses";
 import expenses from "../fixtures/expenses";
+import database from "../../firebase/firebase";
 
 const createMockStore = configureMockStore([thunk]);
 
@@ -48,13 +49,61 @@ test("Should add test to database and store", (done) => {
     note: "this one is better",
     createdAt: 1000,
   };
-  store.dispatch(startAddExpense(expenseData)).then(() => {
-    expect(1).toBe(1);
-    done();
-  });
+  store
+    .dispatch(startAddExpense(expenseData))
+    .then(() => {
+      // Pass all actions to our mockStore, this returns an array of all of the actions held within the store
+      const actions = store.getActions();
+      expect(actions[0]).toEqual({
+        type: "ADD_EXPENSE",
+        expense: {
+          // Expect any string
+          id: expect.any(String),
+          ...expenseData,
+        },
+      });
+
+      // Check if the data was saved to the database
+      return database.ref(`expenses/${actions[0].expense.id}`).once("value");
+    })
+    // Chain promise
+    .then((snapshot) => {
+      expect(snapshot.val()).toEqual(expenseData);
+      done();
+    });
 });
 
-test("Should add expense with defaults to database and store", () => {});
+test("Should add expense with defaults to database and store", (done) => {
+  const store = createMockStore({});
+  const expenseDefaults = {
+    description: "",
+    amount: 0,
+    note: "",
+    createdAt: 0,
+  };
+  store
+    .dispatch(startAddExpense({}))
+    .then(() => {
+      // Pass all actions to our mockStore, this returns an array of all of the actions held within the store
+      const actions = store.getActions();
+      expect(actions[0]).toEqual({
+        type: "ADD_EXPENSE",
+        expense: {
+          // Expect any string
+          id: expect.any(String),
+          ...expenseDefaults,
+        },
+      });
+
+      // Check if the data was saved to the database
+      return database.ref(`expenses/${actions[0].expense.id}`).once("value");
+    })
+    // Chain promise
+    .then((snapshot) => {
+      expect(snapshot.val()).toEqual(expenseDefaults);
+      done();
+    });
+});
 
 // This test is not required
 // test("should set up add expense action object with default values", () => {
