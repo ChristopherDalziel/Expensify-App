@@ -19,7 +19,8 @@ export const startAddExpense = (expenseData = {}) => {
     // Destructor our data
     const expense = { description, note, amount, createdAt };
     // Save our data
-    database
+    // Using return here is going to allow us to pass on our data to a second promise if required
+    return database
       .ref("expenses")
       .push(expense)
       .then((ref) => {

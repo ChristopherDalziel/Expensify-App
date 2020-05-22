@@ -31,14 +31,15 @@ test("Should set up edit expense action object", () => {
 });
 
 test("Should set up add expense action object with provided values", () => {
-  const action = addExpense(expenses[2]);
+  const action = startAddExpense(expenses[2]);
   expect(action).toEqual({
     type: "ADD_EXPENSE",
     expense: expenses[2],
   });
 });
 
-test("Should add test to database and store", () => {
+// This is an async test, when we are creating an async test we need to let our test suite know, otherwise it will just pass or fail without waiting for the asynchronous calls, to do this we pass in done, our test is not complete until we call done();
+test("Should add test to database and store", (done) => {
   const store = createMockStore({});
   const expenseData = {
     description: "Mouse",
@@ -46,7 +47,10 @@ test("Should add test to database and store", () => {
     note: "this one is better",
     createdAt: 1000,
   };
-  store.dispatch(startAddExpense(expenseData));
+  store.dispatch(startAddExpense(expenseData)).then(() => {
+    expect(1).toBe(1);
+    done();
+  });
 });
 
 test("Should add expense with defaults to database and store", () => {});
