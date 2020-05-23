@@ -23,4 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # firebase
-/src/firebase
+# /src/firebase
+
+# env
+.env.development
+.env.test
