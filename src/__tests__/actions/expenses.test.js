@@ -5,6 +5,7 @@ import {
   addExpense,
   removeExpense,
   editExpense,
+  setExpenses,
 } from "../../actions/expenses";
 import expenses from "../fixtures/expenses";
 import database from "../../firebase/firebase";
@@ -118,18 +119,7 @@ test("Should add expense with defaults to database and store", (done) => {
     });
 });
 
-// This test is not required
-// test("should set up add expense action object with default values", () => {
-//   const action = addExpense();
-
-//   expect(action).toEqual({
-//     type: "ADD_EXPENSE",
-//     expense: {
-//       description: "",
-//       note: "",
-//       amount: 0,
-//       createdAt: 0,
-//       id: expect.any(String),
-//     },
-//   });
-// });
+test("Should setup set expense action object with data", () => {
+  const action = setExpenses(expenses);
+  expect(action).toEqual({ type: "SET_EXPENSES", expenses });
+});
