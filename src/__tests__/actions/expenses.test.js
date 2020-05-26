@@ -21,7 +21,7 @@ beforeEach((done) => {
   });
   database
     .ref("expenses")
-    .set({ expensesData })
+    .set(expensesData)
     .then(() => {
       done();
     });
