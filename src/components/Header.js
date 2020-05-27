@@ -13,6 +13,7 @@ const Header = () => {
       <NavLink activeClassName="isActive" to="/create">
         Create
       </NavLink>
+      <button>Logout</button>
     </div>
   );
 };
