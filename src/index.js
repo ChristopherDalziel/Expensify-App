@@ -6,7 +6,7 @@ import "react-dates/initialize";
 import AppRouter from "./routers/AppRouter";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
-import "./firebase/firebase";
+import { firebase } from "./firebase/firebase";
 
 // Playground Imports
 // import Redux101 from "../playground/redux-101";
@@ -51,6 +51,14 @@ ReactDOM.render(<p>Loading...</p>, document.getElementById("root"));
 
 store.dispatch(startSetExpenses()).then(() => {
   ReactDOM.render(jsx, document.getElementById("root"));
+});
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log("Logged in");
+  } else {
+    console.log("Logged out");
+  }
 });
 
 // If you want your app to work offline and load faster, you can change

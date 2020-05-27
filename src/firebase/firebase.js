@@ -18,8 +18,11 @@ firebase.initializeApp(firebaseConfig);
 // Testing the firebase connection
 const database = firebase.database();
 
+// Google Authentication
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
 // Exporting firebase for use within our application
-export { firebase, database as default };
+export { firebase, googleAuthProvider, database as default };
 
 // EVENT HANDLERS/LISTENERS?
 
