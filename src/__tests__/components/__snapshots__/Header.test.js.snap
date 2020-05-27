@@ -1,3 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render header correctly 1`] = `ShallowWrapper {}`;
+exports[`Should render header correctly 1`] = `
+<div>
+  <h1>
+    Expensify
+  </h1>
+  <NavLink
+    activeClassName="isActive"
+    exact={true}
+    to="/dashboard"
+  >
+    Dashboard
+  </NavLink>
+  <NavLink
+    activeClassName="isActive"
+    to="/create"
+  >
+    Create
+  </NavLink>
+</div>
+`;

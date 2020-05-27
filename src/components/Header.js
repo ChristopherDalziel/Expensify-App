@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div>
       <h1>Expensify</h1>
-      <NavLink exact activeClassName="isActive" to="/">
+      <NavLink exact activeClassName="isActive" to="/dashboard">
         Dashboard
       </NavLink>
       <NavLink activeClassName="isActive" to="/create">

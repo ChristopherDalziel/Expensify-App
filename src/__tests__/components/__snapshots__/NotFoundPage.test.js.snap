@@ -1,3 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render page not found page correctly 1`] = `ShallowWrapper {}`;
+exports[`Should render page not found page correctly 1`] = `
+<div>
+  404 Error! - 
+  <Link
+    to="/"
+  >
+    Dashboard
+  </Link>
+</div>
+`;
