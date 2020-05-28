@@ -47,16 +47,27 @@ const jsx = (
   </Provider>
 );
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById("root"));
+let hasRendered = false;
+const renderApp = () => {
+  if (!hasRendered) {
+    ReactDOM.render(jsx, document.getElementById("root"));
+    hasRendered = true;
+  }
+};
 
-store.dispatch(startSetExpenses()).then(() => {
-  ReactDOM.render(jsx, document.getElementById("root"));
-});
+ReactDOM.render(<p>Loading...</p>, document.getElementById("root"));
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    console.log("Logged in");
+    // Only run if user is logged in
+    store.dispatch(startSetExpenses()).then(() => {
+      renderApp();
+      if (history.location.pathname === "/") {
+        history.push("/dashboard");
+      }
+    });
   } else {
+    renderApp();
     history.push("/");
   }
 });
