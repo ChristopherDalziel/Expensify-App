@@ -19,7 +19,7 @@ import { firebase } from "./firebase/firebase";
 import configureStore from "./store/configureStore";
 // Actions
 import { startSetExpenses } from "./actions/expenses";
-// import { setTextFilter } from "./actions/filters";
+import { login, logout } from "./actions/auth";
 // Selector
 import getVisibleExpenses from "./selectors/expenses";
 // Store config
@@ -59,6 +59,7 @@ ReactDOM.render(<p>Loading...</p>, document.getElementById("root"));
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // Only run if user is logged in
+    store.dispatch(login(user.uid));
     store.dispatch(startSetExpenses()).then(() => {
       renderApp();
       if (history.location.pathname === "/") {
@@ -66,6 +67,7 @@ firebase.auth().onAuthStateChanged((user) => {
       }
     });
   } else {
+    store.dispatch(logout());
     renderApp();
     history.push("/");
   }
