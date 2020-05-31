@@ -38,7 +38,7 @@ test("Should render ExpenseListFilters with alt data correctly", () => {
 
 test("Should handle text change", () => {
   const value = "rent";
-  wrapper.find("input").simulate("change", {
+  wrapper.find("FormControl").simulate("change", {
     target: {
       value,
     },
@@ -49,7 +49,7 @@ test("Should handle text change", () => {
 test("Should sort by date", () => {
   const value = "date";
   wrapper.setProps({ filters: altFilters });
-  wrapper.find("select").simulate("change", {
+  wrapper.find("DropdownButton").simulate("change", {
     target: { value },
   });
   expect(sortByDate).toHaveBeenCalled();
@@ -64,7 +64,7 @@ test("Should sort by date", () => {
 
 test("Should sort by amount", () => {
   const value = "amount";
-  wrapper.find("select").simulate("change", {
+  wrapper.find("DropdownButton").simulate("change", {
     target: { value },
   });
   expect(sortByAmount).toHaveBeenCalled();

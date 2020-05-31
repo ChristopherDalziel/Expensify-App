@@ -124,7 +124,9 @@ export default class ExpenseForm extends React.Component {
             onChange={this.onTextAreChange}
           ></Form.Control>
           <br />
-          <Button variant="outline-primary">Add Expense</Button>
+          <Button variant="outline-primary" type="submit">
+            Add Expense
+          </Button>
         </Form>
       </FormContainer>
     );

@@ -1,27 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render ExpenseListFilters correctly 1`] = `
-<div>
-  <input
+<InputGroup>
+  <FormControl
     onChange={[Function]}
     type="text"
     value=""
   />
-  <select
+  <DropdownButton
     onChange={[Function]}
+    title="Sort selection Dropdown"
     value="date"
   >
-    <option
+    <DropdownItem
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "SafeAnchor",
+          "render": [Function],
+        }
+      }
+      disabled={false}
       value="date"
     >
       Date
-    </option>
-    <option
+    </DropdownItem>
+    <DropdownItem
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "SafeAnchor",
+          "render": [Function],
+        }
+      }
+      disabled={false}
       value="amount"
     >
       Amount
-    </option>
-  </select>
+    </DropdownItem>
+  </DropdownButton>
   <withStyles(DateRangePicker)
     anchorDirection="left"
     appendToBody={false}
@@ -125,31 +142,48 @@ exports[`Should render ExpenseListFilters correctly 1`] = `
     withFullScreenPortal={false}
     withPortal={false}
   />
-</div>
+</InputGroup>
 `;
 
 exports[`Should render ExpenseListFilters with alt data correctly 1`] = `
-<div>
-  <input
+<InputGroup>
+  <FormControl
     onChange={[Function]}
     type="text"
     value="bills"
   />
-  <select
+  <DropdownButton
     onChange={[Function]}
+    title="Sort selection Dropdown"
     value="amount"
   >
-    <option
+    <DropdownItem
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "SafeAnchor",
+          "render": [Function],
+        }
+      }
+      disabled={false}
       value="date"
     >
       Date
-    </option>
-    <option
+    </DropdownItem>
+    <DropdownItem
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "SafeAnchor",
+          "render": [Function],
+        }
+      }
+      disabled={false}
       value="amount"
     >
       Amount
-    </option>
-  </select>
+    </DropdownItem>
+  </DropdownButton>
   <withStyles(DateRangePicker)
     anchorDirection="left"
     appendToBody={false}
@@ -253,5 +287,5 @@ exports[`Should render ExpenseListFilters with alt data correctly 1`] = `
     withFullScreenPortal={false}
     withPortal={false}
   />
-</div>
+</InputGroup>
 `;

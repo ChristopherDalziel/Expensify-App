@@ -1,6 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { DateRangePicker } from "react-dates";
+import InputGroup from "react-bootstrap/InputGroup";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import FormControl from "react-bootstrap/FormControl";
 import {
   setTextFilter,
   sortByAmount,
@@ -37,17 +41,21 @@ export class ExpenseListFilters extends React.Component {
 
   render() {
     return (
-      <div>
+      <InputGroup>
         {/* This input is reading and writing from the store! */}
-        <input
+        <FormControl
           type="text"
           value={this.props.filters.text}
           onChange={this.onTextChange}
-        ></input>
-        <select value={this.props.filters.sortBy} onChange={this.onSortChange}>
-          <option value="date">Date</option>
-          <option value="amount">Amount</option>
-        </select>
+        ></FormControl>
+        <DropdownButton
+          title="Sort selection Dropdown"
+          value={this.props.filters.sortBy}
+          onChange={this.onSortChange}
+        >
+          <Dropdown.Item value="date">Date</Dropdown.Item>
+          <Dropdown.Item value="amount">Amount</Dropdown.Item>
+        </DropdownButton>
         <DateRangePicker
           startDate={this.props.filters.startDate}
           startDateId="placeholder-id-1"
@@ -60,7 +68,7 @@ export class ExpenseListFilters extends React.Component {
           isOutsideRange={() => false}
           showClearDates={true}
         />
-      </div>
+      </InputGroup>
     );
   }
 }

@@ -149,7 +149,7 @@ exports[`Should render error for invalid form submission 1`] = `
     <Button
       active={false}
       disabled={false}
-      type="button"
+      type="submit"
       variant="outline-primary"
     >
       Add Expense
@@ -310,7 +310,7 @@ exports[`Should render error for invalid form submission 2`] = `
     <Button
       active={false}
       disabled={false}
-      type="button"
+      type="submit"
       variant="outline-primary"
     >
       Add Expense
@@ -468,7 +468,7 @@ exports[`Should render expense form correct 1`] = `
     <Button
       active={false}
       disabled={false}
-      type="button"
+      type="submit"
       variant="outline-primary"
     >
       Add Expense
@@ -626,7 +626,7 @@ exports[`Should render expense form with expense data 1`] = `
     <Button
       active={false}
       disabled={false}
-      type="button"
+      type="submit"
       variant="outline-primary"
     >
       Add Expense
