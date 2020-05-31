@@ -1,11 +1,19 @@
 import React from "react";
 import moment from "moment";
 import { SingleDatePicker } from "react-dates";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import styled from "@emotion/styled";
 
 // const date = new Date();
 // const now = moment();
 
 // console.log(now.format("MMM Do YYYY"));
+
+const FormContainer = styled.div`
+  margin: 10px;
+  width: 50vw;
+`;
 
 export default class ExpenseForm extends React.Component {
   constructor(props) {
@@ -78,40 +86,47 @@ export default class ExpenseForm extends React.Component {
     }
   };
 
-  // {props.isAdmin && <p>This is private info please don't share!</p>}
-
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
-        {this.state.error && <p>{this.state.error}</p>}
-        <input
-          type="text"
-          placeholder="Description"
-          autoFocus
-          value={this.state.description}
-          onChange={this.onDescriptionChange}
-        ></input>
-        <input
-          type="text"
-          placeholder="Amount"
-          value={this.state.amount}
-          onChange={this.onAmountChange}
-        ></input>
-        <SingleDatePicker
-          date={this.state.createdAt}
-          onDateChange={this.onDateChange}
-          focused={this.state.calenderFocused}
-          onFocusChange={this.onFocusChange}
-          numberOfMonths={1}
-          isOutsideRange={() => false}
-        />
-        <textarea
-          placeholder="Add a note for your expense (optional)"
-          value={this.state.note}
-          onChange={this.onTextAreChange}
-        ></textarea>
-        <button>Add Expense</button>
-      </form>
+      <FormContainer>
+        <Form onSubmit={this.onSubmit}>
+          {this.state.error && <p>{this.state.error}</p>}
+          <Form.Label>Expense Description</Form.Label>
+          <Form.Control
+            autoFocus
+            type="text"
+            placeholder="Description"
+            value={this.state.description}
+            onChange={this.onDescriptionChange}
+          ></Form.Control>
+          <Form.Label>Expense Amount</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Amount"
+            value={this.state.amount}
+            onChange={this.onAmountChange}
+          ></Form.Control>
+          <Form.Label>Expense Date</Form.Label>
+          <br />
+          <SingleDatePicker
+            date={this.state.createdAt}
+            onDateChange={this.onDateChange}
+            focused={this.state.calenderFocused}
+            onFocusChange={this.onFocusChange}
+            numberOfMonths={1}
+            isOutsideRange={() => false}
+          />
+          <br />
+          <Form.Label>Expense Notes</Form.Label>
+          <Form.Control
+            placeholder="Add a note for your expense (optional)"
+            value={this.state.note}
+            onChange={this.onTextAreChange}
+          ></Form.Control>
+          <br />
+          <Button variant="outline-primary">Add Expense</Button>
+        </Form>
+      </FormContainer>
     );
   }
 }
