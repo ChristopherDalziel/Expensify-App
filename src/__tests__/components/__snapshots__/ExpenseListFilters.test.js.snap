@@ -1,44 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render ExpenseListFilters correctly 1`] = `
-<InputGroup>
-  <FormControl
-    onChange={[Function]}
-    type="text"
-    value=""
-  />
-  <DropdownButton
-    onChange={[Function]}
-    title="Sort selection Dropdown"
-    value="date"
-  >
-    <DropdownItem
-      as={
-        Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "displayName": "SafeAnchor",
-          "render": [Function],
-        }
-      }
-      disabled={false}
+<Styled(div)>
+  <p>
+    Filter Text:
+  </p>
+  <InputGroup>
+    <Styled(div)>
+      <FormControl
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </Styled(div)>
+    <DropdownButton
+      onChange={[Function]}
+      title="Sort By"
       value="date"
     >
-      Date
-    </DropdownItem>
-    <DropdownItem
-      as={
-        Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "displayName": "SafeAnchor",
-          "render": [Function],
+      <DropdownItem
+        as={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "displayName": "SafeAnchor",
+            "render": [Function],
+          }
         }
-      }
-      disabled={false}
-      value="amount"
-    >
-      Amount
-    </DropdownItem>
-  </DropdownButton>
+        disabled={false}
+        value="date"
+      >
+        Date
+      </DropdownItem>
+      <DropdownItem
+        as={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "displayName": "SafeAnchor",
+            "render": [Function],
+          }
+        }
+        disabled={false}
+        value="amount"
+      >
+        Amount
+      </DropdownItem>
+    </DropdownButton>
+  </InputGroup>
+  <p>
+    Date Range:
+  </p>
   <withStyles(DateRangePicker)
     anchorDirection="left"
     appendToBody={false}
@@ -142,48 +152,59 @@ exports[`Should render ExpenseListFilters correctly 1`] = `
     withFullScreenPortal={false}
     withPortal={false}
   />
-</InputGroup>
+  <br />
+</Styled(div)>
 `;
 
 exports[`Should render ExpenseListFilters with alt data correctly 1`] = `
-<InputGroup>
-  <FormControl
-    onChange={[Function]}
-    type="text"
-    value="bills"
-  />
-  <DropdownButton
-    onChange={[Function]}
-    title="Sort selection Dropdown"
-    value="amount"
-  >
-    <DropdownItem
-      as={
-        Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "displayName": "SafeAnchor",
-          "render": [Function],
-        }
-      }
-      disabled={false}
-      value="date"
-    >
-      Date
-    </DropdownItem>
-    <DropdownItem
-      as={
-        Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "displayName": "SafeAnchor",
-          "render": [Function],
-        }
-      }
-      disabled={false}
+<Styled(div)>
+  <p>
+    Filter Text:
+  </p>
+  <InputGroup>
+    <Styled(div)>
+      <FormControl
+        onChange={[Function]}
+        type="text"
+        value="bills"
+      />
+    </Styled(div)>
+    <DropdownButton
+      onChange={[Function]}
+      title="Sort By"
       value="amount"
     >
-      Amount
-    </DropdownItem>
-  </DropdownButton>
+      <DropdownItem
+        as={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "displayName": "SafeAnchor",
+            "render": [Function],
+          }
+        }
+        disabled={false}
+        value="date"
+      >
+        Date
+      </DropdownItem>
+      <DropdownItem
+        as={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "displayName": "SafeAnchor",
+            "render": [Function],
+          }
+        }
+        disabled={false}
+        value="amount"
+      >
+        Amount
+      </DropdownItem>
+    </DropdownButton>
+  </InputGroup>
+  <p>
+    Date Range:
+  </p>
   <withStyles(DateRangePicker)
     anchorDirection="left"
     appendToBody={false}
@@ -287,5 +308,6 @@ exports[`Should render ExpenseListFilters with alt data correctly 1`] = `
     withFullScreenPortal={false}
     withPortal={false}
   />
-</InputGroup>
+  <br />
+</Styled(div)>
 `;

@@ -5,6 +5,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import FormControl from "react-bootstrap/FormControl";
+import styled from "@emotion/styled";
 import {
   setTextFilter,
   sortByAmount,
@@ -12,6 +13,14 @@ import {
   setEndDate,
   setStartDate,
 } from "../actions/filters";
+
+const ExpenseListFiltersContainer = styled.div`
+  margin: 10px;
+`;
+
+const InputContainer = styled.div`
+  width: 25vw;
+`;
 
 export class ExpenseListFilters extends React.Component {
   state = {
@@ -41,23 +50,28 @@ export class ExpenseListFilters extends React.Component {
 
   render() {
     return (
-      <InputGroup>
-        {/* This input is reading and writing from the store! */}
-        <FormControl
-          type="text"
-          value={this.props.filters.text}
-          onChange={this.onTextChange}
-        ></FormControl>
-        <br />
-        <DropdownButton
-          title="Sort By"
-          value={this.props.filters.sortBy}
-          onChange={this.onSortChange}
-        >
-          <Dropdown.Item value="date">Date</Dropdown.Item>
-          <Dropdown.Item value="amount">Amount</Dropdown.Item>
-        </DropdownButton>
-        <br />
+      <ExpenseListFiltersContainer>
+        <p>Filter Text:</p>
+        <InputGroup>
+          <InputContainer>
+            {/* This input is reading and writing from the store! */}
+            <FormControl
+              type="text"
+              value={this.props.filters.text}
+              onChange={this.onTextChange}
+            ></FormControl>
+          </InputContainer>
+
+          <DropdownButton
+            title="Sort By"
+            value={this.props.filters.sortBy}
+            onChange={this.onSortChange}
+          >
+            <Dropdown.Item value="date">Date</Dropdown.Item>
+            <Dropdown.Item value="amount">Amount</Dropdown.Item>
+          </DropdownButton>
+        </InputGroup>
+        <p>Date Range:</p>
         <DateRangePicker
           startDate={this.props.filters.startDate}
           startDateId="placeholder-id-1"
@@ -70,7 +84,8 @@ export class ExpenseListFilters extends React.Component {
           isOutsideRange={() => false}
           showClearDates={true}
         />
-      </InputGroup>
+        <br />
+      </ExpenseListFiltersContainer>
     );
   }
 }
