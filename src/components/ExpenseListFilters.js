@@ -48,14 +48,16 @@ export class ExpenseListFilters extends React.Component {
           value={this.props.filters.text}
           onChange={this.onTextChange}
         ></FormControl>
+        <br />
         <DropdownButton
-          title="Sort selection Dropdown"
+          title="Sort By"
           value={this.props.filters.sortBy}
           onChange={this.onSortChange}
         >
           <Dropdown.Item value="date">Date</Dropdown.Item>
           <Dropdown.Item value="amount">Amount</Dropdown.Item>
         </DropdownButton>
+        <br />
         <DateRangePicker
           startDate={this.props.filters.startDate}
           startDateId="placeholder-id-1"
