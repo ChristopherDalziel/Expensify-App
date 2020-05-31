@@ -19,7 +19,6 @@ export const Header = ({ startLogout }) => {
           Create
         </Nav.Link>
       </Nav.Item>
-
       <Nav.Link onClick={startLogout}>Logout</Nav.Link>
     </Navbar>
   );
