@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { startLogout } from "../actions/auth";
-import "../styles/header.css";
 
 export const Header = ({ startLogout }) => {
   return (

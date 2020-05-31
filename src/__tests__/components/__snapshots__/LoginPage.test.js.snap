@@ -2,8 +2,13 @@
 
 exports[`Should render LoginPage correctly 1`] = `
 <div>
-  <button>
+  <Button
+    active={false}
+    disabled={false}
+    type="button"
+    variant="outline-primary"
+  >
     Login
-  </button>
+  </Button>
 </div>
 `;

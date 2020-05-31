@@ -11,6 +11,6 @@ test("Should render LoginPage correctly", () => {
 test("Should call startLogin on button click", () => {
   const startLoginSpy = jest.fn();
   const wrapper = shallow(<LoginPage startLogin={startLoginSpy} />);
-  wrapper.find("button").simulate("click");
+  wrapper.find("Button").simulate("click");
   expect(startLoginSpy).toHaveBeenCalledTimes(1);
 });
