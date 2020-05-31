@@ -2,13 +2,14 @@
 
 exports[`Should render header correctly 1`] = `
 <Navbar
+  bg="dark"
   collapseOnSelect={false}
   expand={true}
   variant="light"
 >
-  <h1>
+  <Styled(h1)>
     Expensify
-  </h1>
+  </Styled(h1)>
   <NavItem>
     <NavLink
       activeClassName="isActive"
