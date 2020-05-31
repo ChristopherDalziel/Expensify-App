@@ -1,27 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render header correctly 1`] = `
-<div>
+<Navbar
+  collapseOnSelect={false}
+  expand={true}
+  variant="light"
+>
   <h1>
     Expensify
   </h1>
+  <NavItem>
+    <NavLink
+      activeClassName="isActive"
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "NavLink",
+          "propTypes": Object {
+            "activeClassName": [Function],
+            "activeStyle": [Function],
+            "aria-current": [Function],
+            "className": [Function],
+            "exact": [Function],
+            "innerRef": [Function],
+            "isActive": [Function],
+            "location": [Function],
+            "onClick": [Function],
+            "replace": [Function],
+            "strict": [Function],
+            "style": [Function],
+            "target": [Function],
+            "to": [Function],
+          },
+          "render": [Function],
+        }
+      }
+      disabled={false}
+      exact={true}
+      to="/dashboard"
+    >
+      Dashboard
+    </NavLink>
+  </NavItem>
+  <NavItem>
+    <NavLink
+      activeClassName="isActive"
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "NavLink",
+          "propTypes": Object {
+            "activeClassName": [Function],
+            "activeStyle": [Function],
+            "aria-current": [Function],
+            "className": [Function],
+            "exact": [Function],
+            "innerRef": [Function],
+            "isActive": [Function],
+            "location": [Function],
+            "onClick": [Function],
+            "replace": [Function],
+            "strict": [Function],
+            "style": [Function],
+            "target": [Function],
+            "to": [Function],
+          },
+          "render": [Function],
+        }
+      }
+      disabled={false}
+      to="/create"
+    >
+      Create
+    </NavLink>
+  </NavItem>
   <NavLink
-    activeClassName="isActive"
-    exact={true}
-    to="/dashboard"
-  >
-    Dashboard
-  </NavLink>
-  <NavLink
-    activeClassName="isActive"
-    to="/create"
-  >
-    Create
-  </NavLink>
-  <button
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "SafeAnchor",
+        "render": [Function],
+      }
+    }
+    disabled={false}
     onClick={[Function]}
   >
     Logout
-  </button>
-</div>
+  </NavLink>
+</Navbar>
 `;
