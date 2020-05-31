@@ -1,11 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import { startLogin } from "../../actions/auth";
+import Button from "react-bootstrap/Button";
 
 export const LoginPage = ({ startLogin }) => {
   return (
     <div>
-      <button onClick={startLogin}>Login</button>
+      <Button variant="outline-primary" onClick={startLogin}>
+        Login
+      </Button>
     </div>
   );
 };

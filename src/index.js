@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import "react-dates/lib/css/_datepicker.css";
