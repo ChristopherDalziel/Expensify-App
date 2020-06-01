@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import ExpenseForm from "../ExpenseForm";
 import { startAddExpense } from "../../actions/expenses";
 
-const AddExpensePageContainer = styled.div`
+const AddExpensePageContainer = styled.main`
   margin: 10px;
 `;
 

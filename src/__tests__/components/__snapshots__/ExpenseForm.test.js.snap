@@ -13,6 +13,7 @@ exports[`Should render error for invalid form submission 1`] = `
       Expense Description
     </FormLabel>
     <FormControl
+      aria-label="Description"
       autoFocus={true}
       onChange={[Function]}
       placeholder="Description"
@@ -26,6 +27,7 @@ exports[`Should render error for invalid form submission 1`] = `
       Expense Amount
     </FormLabel>
     <FormControl
+      aria-label="Amount"
       onChange={[Function]}
       placeholder="Amount"
       type="text"
@@ -141,6 +143,7 @@ exports[`Should render error for invalid form submission 1`] = `
       Expense Notes
     </FormLabel>
     <FormControl
+      aria-label="Expense notes"
       onChange={[Function]}
       placeholder="Add a note for your expense (optional)"
       value=""
@@ -174,6 +177,7 @@ exports[`Should render error for invalid form submission 2`] = `
       Expense Description
     </FormLabel>
     <FormControl
+      aria-label="Description"
       autoFocus={true}
       onChange={[Function]}
       placeholder="Description"
@@ -187,6 +191,7 @@ exports[`Should render error for invalid form submission 2`] = `
       Expense Amount
     </FormLabel>
     <FormControl
+      aria-label="Amount"
       onChange={[Function]}
       placeholder="Amount"
       type="text"
@@ -302,6 +307,7 @@ exports[`Should render error for invalid form submission 2`] = `
       Expense Notes
     </FormLabel>
     <FormControl
+      aria-label="Expense notes"
       onChange={[Function]}
       placeholder="Add a note for your expense (optional)"
       value=""
@@ -332,6 +338,7 @@ exports[`Should render expense form correct 1`] = `
       Expense Description
     </FormLabel>
     <FormControl
+      aria-label="Description"
       autoFocus={true}
       onChange={[Function]}
       placeholder="Description"
@@ -345,6 +352,7 @@ exports[`Should render expense form correct 1`] = `
       Expense Amount
     </FormLabel>
     <FormControl
+      aria-label="Amount"
       onChange={[Function]}
       placeholder="Amount"
       type="text"
@@ -460,6 +468,7 @@ exports[`Should render expense form correct 1`] = `
       Expense Notes
     </FormLabel>
     <FormControl
+      aria-label="Expense notes"
       onChange={[Function]}
       placeholder="Add a note for your expense (optional)"
       value=""
@@ -490,6 +499,7 @@ exports[`Should render expense form with expense data 1`] = `
       Expense Description
     </FormLabel>
     <FormControl
+      aria-label="Description"
       autoFocus={true}
       onChange={[Function]}
       placeholder="Description"
@@ -503,6 +513,7 @@ exports[`Should render expense form with expense data 1`] = `
       Expense Amount
     </FormLabel>
     <FormControl
+      aria-label="Amount"
       onChange={[Function]}
       placeholder="Amount"
       type="text"
@@ -618,6 +629,7 @@ exports[`Should render expense form with expense data 1`] = `
       Expense Notes
     </FormLabel>
     <FormControl
+      aria-label="Expense notes"
       onChange={[Function]}
       placeholder="Add a note for your expense (optional)"
       value=""

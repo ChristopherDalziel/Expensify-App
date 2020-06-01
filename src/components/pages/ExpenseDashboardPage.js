@@ -4,7 +4,7 @@ import ExpenseList from "../ExpenseList";
 import ExpenseListFilters from "../ExpenseListFilters";
 import ExpensesSummary from "../ExpensesSummary";
 
-const DashboardContainer = styled.div`
+const DashboardContainer = styled.main`
   margin: 10px;
 `;
 

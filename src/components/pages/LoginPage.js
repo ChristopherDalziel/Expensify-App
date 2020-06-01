@@ -4,7 +4,7 @@ import { startLogin } from "../../actions/auth";
 import Button from "react-bootstrap/Button";
 import styled from "@emotion/styled";
 
-const LoginContainer = styled.div`
+const LoginContainer = styled.main`
   height: 100vh;
   display: flex;
   justify-content: center;

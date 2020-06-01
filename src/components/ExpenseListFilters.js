@@ -47,11 +47,12 @@ export class ExpenseListFilters extends React.Component {
   render() {
     return (
       <>
-        <p>Filter Text:</p>
+        <label>Filter Text:</label>
         <InputGroup>
           <InputContainer>
             {/* This input is reading and writing from the store! */}
             <FormControl
+              aria-label="Filter Input"
               type="text"
               value={this.props.filters.text}
               onChange={this.onTextChange}

@@ -2,12 +2,13 @@
 
 exports[`Should render ExpenseListFilters correctly 1`] = `
 <Fragment>
-  <p>
+  <label>
     Filter Text:
-  </p>
+  </label>
   <InputGroup>
     <Styled(div)>
       <FormControl
+        aria-label="Filter Input"
         onChange={[Function]}
         type="text"
         value=""
@@ -158,12 +159,13 @@ exports[`Should render ExpenseListFilters correctly 1`] = `
 
 exports[`Should render ExpenseListFilters with alt data correctly 1`] = `
 <Fragment>
-  <p>
+  <label>
     Filter Text:
-  </p>
+  </label>
   <InputGroup>
     <Styled(div)>
       <FormControl
+        aria-label="Filter Input"
         onChange={[Function]}
         type="text"
         value="bills"

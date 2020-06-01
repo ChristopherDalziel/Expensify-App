@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import ExpenseForm from "../ExpenseForm";
 import { startRemoveExpense, startEditExpense } from "../../actions/expenses";
 
-const EditExpensePageContainer = styled.div`
+const EditExpensePageContainer = styled.main`
   margin: 10px;
 `;
 

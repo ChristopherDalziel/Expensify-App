@@ -93,6 +93,7 @@ export default class ExpenseForm extends React.Component {
           <Form.Label>Expense Description</Form.Label>
           <Form.Control
             autoFocus
+            aria-label="Description"
             type="text"
             placeholder="Description"
             value={this.state.description}
@@ -101,6 +102,7 @@ export default class ExpenseForm extends React.Component {
           <Form.Label>Expense Amount</Form.Label>
           <Form.Control
             type="text"
+            aria-label="Amount"
             placeholder="Amount"
             value={this.state.amount}
             onChange={this.onAmountChange}
@@ -118,6 +120,7 @@ export default class ExpenseForm extends React.Component {
           <br />
           <Form.Label>Expense Notes</Form.Label>
           <Form.Control
+            aria-label="Expense notes"
             placeholder="Add a note for your expense (optional)"
             value={this.state.note}
             onChange={this.onTextAreChange}

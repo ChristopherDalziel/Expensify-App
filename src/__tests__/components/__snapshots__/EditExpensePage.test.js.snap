@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render editExpense page correctly 1`] = `
-<Styled(div)>
+<Styled(main)>
   <h1>
     Edit Expense
   </h1>
@@ -27,5 +27,5 @@ exports[`Should render editExpense page correctly 1`] = `
   >
     Remove
   </Button>
-</Styled(div)>
+</Styled(main)>
 `;
