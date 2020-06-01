@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import numeral from "numeral";
 import getVisibleExpenses from "../selectors/expenses";
 import selectExpensesTotal from "../selectors/expensesTotal";
-import styled from "@emotion/styled";
 
 export const ExpensesSummary = ({ expenseCount, expensesTotal }) => {
   const expenseWord = expenseCount === 1 ? "expense" : "expenses";
