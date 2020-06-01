@@ -11,7 +11,6 @@ import styled from "@emotion/styled";
 // console.log(now.format("MMM Do YYYY"));
 
 const FormContainer = styled.div`
-  margin: 10px;
   width: 50vw;
 `;
 

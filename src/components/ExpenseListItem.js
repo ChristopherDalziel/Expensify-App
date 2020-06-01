@@ -4,9 +4,7 @@ import moment from "moment";
 import numeral from "numeral";
 import styled from "@emotion/styled";
 
-const ExpenseListItemContainer = styled.div`
-  margin: 10px;
-`;
+const ExpenseListItemContainer = styled.div``;
 
 const ExpenseListItem = ({ description, amount, createdAt, id }) => (
   <ExpenseListItemContainer>

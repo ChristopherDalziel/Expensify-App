@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import ExpenseForm from "../ExpenseForm";
 import { startRemoveExpense, startEditExpense } from "../../actions/expenses";
 
-const EditExpenseItemsMargin = styled.div`
+const EditExpensePageContainer = styled.div`
   margin: 10px;
 `;
 
@@ -22,17 +22,14 @@ export class EditExpensePage extends React.Component {
 
   render() {
     return (
-      <>
-        <EditExpenseItemsMargin>
-          <h1>Edit Expense</h1>
-        </EditExpenseItemsMargin>
+      <EditExpensePageContainer>
+        <h1>Edit Expense</h1>
         <ExpenseForm expense={this.props.expense} onSubmit={this.onSubmit} />
-        <EditExpenseItemsMargin>
-          <Button variant="primary" onClick={this.onRemove}>
-            Remove
-          </Button>
-        </EditExpenseItemsMargin>
-      </>
+        <br />
+        <Button variant="primary" onClick={this.onRemove}>
+          Remove
+        </Button>
+      </EditExpensePageContainer>
     );
   }
 }

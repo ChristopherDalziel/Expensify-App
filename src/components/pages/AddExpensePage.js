@@ -1,7 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
+import styled from "@emotion/styled";
 import ExpenseForm from "../ExpenseForm";
 import { startAddExpense } from "../../actions/expenses";
+
+const AddExpensePageContainer = styled.div`
+  margin: 10px;
+`;
 
 export class AddExpensePage extends React.Component {
   onSubmit = (expense) => {
@@ -11,10 +16,10 @@ export class AddExpensePage extends React.Component {
   };
   render() {
     return (
-      <div>
+      <AddExpensePageContainer>
         <h1>Add Expense</h1>
         <ExpenseForm onSubmit={this.onSubmit} />
-      </div>
+      </AddExpensePageContainer>
     );
   }
 }

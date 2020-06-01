@@ -1,15 +1,20 @@
 import React from "react";
+import styled from "@emotion/styled";
 import ExpenseList from "../ExpenseList";
 import ExpenseListFilters from "../ExpenseListFilters";
 import ExpensesSummary from "../ExpensesSummary";
 
+const DashboardContainer = styled.div`
+  margin: 10px;
+`;
+
 const ExpenseDashboardPage = () => {
   return (
-    <div>
+    <DashboardContainer>
       <ExpensesSummary />
       <ExpenseListFilters />
       <ExpenseList />
-    </div>
+    </DashboardContainer>
   );
 };
 

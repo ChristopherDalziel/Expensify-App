@@ -14,10 +14,6 @@ import {
   setStartDate,
 } from "../actions/filters";
 
-const ExpenseListFiltersContainer = styled.div`
-  margin: 10px;
-`;
-
 const InputContainer = styled.div`
   width: 25vw;
 `;
@@ -50,7 +46,7 @@ export class ExpenseListFilters extends React.Component {
 
   render() {
     return (
-      <ExpenseListFiltersContainer>
+      <>
         <p>Filter Text:</p>
         <InputGroup>
           <InputContainer>
@@ -85,7 +81,7 @@ export class ExpenseListFilters extends React.Component {
           showClearDates={true}
         />
         <br />
-      </ExpenseListFiltersContainer>
+      </>
     );
   }
 }

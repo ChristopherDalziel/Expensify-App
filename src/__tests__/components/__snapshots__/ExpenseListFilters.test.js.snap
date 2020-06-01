@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render ExpenseListFilters correctly 1`] = `
-<Styled(div)>
+<Fragment>
   <p>
     Filter Text:
   </p>
@@ -153,11 +153,11 @@ exports[`Should render ExpenseListFilters correctly 1`] = `
     withPortal={false}
   />
   <br />
-</Styled(div)>
+</Fragment>
 `;
 
 exports[`Should render ExpenseListFilters with alt data correctly 1`] = `
-<Styled(div)>
+<Fragment>
   <p>
     Filter Text:
   </p>
@@ -309,5 +309,5 @@ exports[`Should render ExpenseListFilters with alt data correctly 1`] = `
     withPortal={false}
   />
   <br />
-</Styled(div)>
+</Fragment>
 `;

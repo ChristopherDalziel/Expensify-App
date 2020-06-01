@@ -1,12 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render editExpense page correctly 1`] = `
-<Fragment>
-  <Styled(div)>
-    <h1>
-      Edit Expense
-    </h1>
-  </Styled(div)>
+<Styled(div)>
+  <h1>
+    Edit Expense
+  </h1>
   <ExpenseForm
     expense={
       Object {
@@ -19,16 +17,15 @@ exports[`Should render editExpense page correctly 1`] = `
     }
     onSubmit={[Function]}
   />
-  <Styled(div)>
-    <Button
-      active={false}
-      disabled={false}
-      onClick={[Function]}
-      type="button"
-      variant="primary"
-    >
-      Remove
-    </Button>
-  </Styled(div)>
-</Fragment>
+  <br />
+  <Button
+    active={false}
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+    variant="primary"
+  >
+    Remove
+  </Button>
+</Styled(div)>
 `;
