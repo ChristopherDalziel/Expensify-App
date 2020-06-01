@@ -27,22 +27,27 @@ Login via Firebase authentication using a google account
 
 ## Add Expense Page
 
+Create a brand new expense with a description, amount, due date and optional note
 ![Add expense page](src/__README_ASSETS__/AddExpense_Page.png)
 
 ## Dashboard Page (With Expenses)
 
+Display all expenses that match sorting rules
 ![Dashboard page show expenses](src/__README_ASSETS__/DashboardPageWithExpenses.png)
 
 ## Edit Expense Page
 
+Edit existing expense to update saved data (description, amount, due date or note) or remove/delete the expense from your account
 ![Add expense page](src/__README_ASSETS__/EditExpense_Page.png)
 
 ## Sort By Text Example
 
+Sort all saved expenses by text input, app re-renders as you type
 ![Add expense page](src/__README_ASSETS__/SortByText.png)
 
 ## Sort By Date Example
 
+Sort all saved expenses by due dates
 ![Add expense page](src/__README_ASSETS__/SortByDate.png)
 
 ## Firebase Data
