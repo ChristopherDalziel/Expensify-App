@@ -4,6 +4,8 @@
 
 First time using Firebase and Bootstrap
 
+- Some notes within files as this was a learning exercise for me and I'd like some reference notes, as well as the playground file.
+
 ### Tech
 
 - React
