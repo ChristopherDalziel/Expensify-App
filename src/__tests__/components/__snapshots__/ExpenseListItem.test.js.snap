@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render expense list item with data 1`] = `
-<Styled(div)>
+<Fragment>
   <Link
     to="/edit/1"
   >
@@ -14,5 +14,5 @@ exports[`Should render expense list item with data 1`] = `
      -
     January 1st, 1970
   </p>
-</Styled(div)>
+</Fragment>
 `;
