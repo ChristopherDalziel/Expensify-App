@@ -2,9 +2,11 @@
 
 exports[`Should render editExpense page correctly 1`] = `
 <Fragment>
-  <h1>
-    Edit Expense
-  </h1>
+  <Styled(div)>
+    <h1>
+      Edit Expense
+    </h1>
+  </Styled(div)>
   <ExpenseForm
     expense={
       Object {
@@ -17,10 +19,16 @@ exports[`Should render editExpense page correctly 1`] = `
     }
     onSubmit={[Function]}
   />
-  <button
-    onClick={[Function]}
-  >
-    Remove
-  </button>
+  <Styled(div)>
+    <Button
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+      variant="primary"
+    >
+      Remove
+    </Button>
+  </Styled(div)>
 </Fragment>
 `;

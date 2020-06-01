@@ -1,7 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
+import Button from "react-bootstrap/Button";
+import styled from "@emotion/styled";
 import ExpenseForm from "../ExpenseForm";
 import { startRemoveExpense, startEditExpense } from "../../actions/expenses";
+
+const EditExpenseItemsMargin = styled.div`
+  margin: 10px;
+`;
 
 export class EditExpensePage extends React.Component {
   onSubmit = (expense) => {
@@ -17,9 +23,15 @@ export class EditExpensePage extends React.Component {
   render() {
     return (
       <>
-        <h1>Edit Expense</h1>
+        <EditExpenseItemsMargin>
+          <h1>Edit Expense</h1>
+        </EditExpenseItemsMargin>
         <ExpenseForm expense={this.props.expense} onSubmit={this.onSubmit} />
-        <button onClick={this.onRemove}>Remove</button>
+        <EditExpenseItemsMargin>
+          <Button variant="primary" onClick={this.onRemove}>
+            Remove
+          </Button>
+        </EditExpenseItemsMargin>
       </>
     );
   }
