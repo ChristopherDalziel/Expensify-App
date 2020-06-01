@@ -17,6 +17,7 @@ First time using Firebase and Bootstrap
 
 ### Commands
 
+- `npm install` - installs all applications dependencies
 - `npm start` - locally loads application
 - `npm test` - runs applications tests
 
