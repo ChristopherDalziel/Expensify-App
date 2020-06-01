@@ -13,6 +13,11 @@ First time using Firebase and Bootstrap
 - Styled/Emotion
 - Firebase
 
+### Commands
+
+- `npm start` - locally loads application
+- `npm test` - runs applications tests
+
 # Screenshots
 
 ## Login Page
